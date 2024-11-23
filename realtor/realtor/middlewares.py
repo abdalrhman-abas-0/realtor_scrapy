@@ -7,10 +7,11 @@ from scrapy import signals
 
 import scrapy
 from time import time, sleep
-from realtor.spiders.headers_extractor_newrelic import Get_Headers
-from pprint import pprint
+from realtor.spiders.headers_extractor import Get_Headers
+
 import json
 import os
+from typing import Literal
 
 from fake_useragent import UserAgent as UA
 

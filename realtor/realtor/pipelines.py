@@ -11,12 +11,10 @@ from scrapy.utils.project import get_project_settings
 from datetime import datetime, date
 import pandas as pd
 import numpy as np
-import json
-from datetime import datetime,date, timedelta 
+from datetime import datetime 
 import os
 from time import time, sleep
 from scrapy import signals
-from tqdm import tqdm
 from typing import Literal
 
 
@@ -38,7 +36,7 @@ class Realtor_Pipeline:
     
     
     def create_save_point_file(self, spider):
-        self.file_name = f"{spider.name} temporary {spider.state["today"]}.jsonl"
+        self.file_name = f"{spider.name} temporary {spider.state["listing_type"]} {spider.state["today"]}.jsonl"
         self.file = open(os.path.join(self.save_points_dir,self.file_name), 'ab')
         self.exporter = JsonLinesItemExporter(self.file)
         self.exporter.start_exporting()
@@ -51,6 +49,10 @@ class Realtor_Pipeline:
         adapter = ItemAdapter(item)
         adapter["price"] = int(adapter["price"]) if adapter.get("price") else np.nan
         adapter["status"] = adapter["status"].lower() if adapter["status"] else adapter["status"]
+        if (sold_date_str:=adapter.get("sold_date")):
+            sold_date = datetime.strptime(sold_date_str, "%Y-%m-%d").date()
+            adapter["days_on_realtor"] = (spider.state["today"] - sold_date).days
+            adapter["sold_date"] = sold_date.strftime("%d/%m/%Y")
         self.exporter.export_item(item)
     
     def construct_df_from_temporary_file(self, spider):
@@ -67,7 +69,7 @@ class Realtor_Pipeline:
         print(f"\npipeline.states_scraped_list: {states_scraped_list}")
         for state in states_scraped_list:
             state_df = df[df["state"] == state]
-            file_name = f"{spider.name} listings for sale in {state}.xlsx"
+            file_name = f"{spider.name} {spider.state["listing_type"]} {state}.xlsx"
             file_path = os.path.join(output_dir,file_name)
             state_df.to_excel(file_path, index=False)
             print(f"-->results of {state}:{state_df.shape[0]}")

@@ -3,7 +3,7 @@ from scrapy.http import JsonRequest
 from scrapy import signals
 from scrapy.exceptions import DontCloseSpider
 
-from realtor.items import Listings_Object_For_Sale, RealtorItemLoader
+from realtor.items import Listing_Item, RealtorItemLoader
 from realtor.constants import PRIMARY_REQUEST_DATA,SECONDARY_PAYLOAD, STATES, STATES_CODES
 
 
@@ -14,7 +14,8 @@ import jmespath
 import os
 
 
-# scrapy crawl realtor_scraper -a scrape_all=False 
+# scrapy crawl realtor_scraper -a scrape_all=False -a listing_type=new_listings
+# scrapy crawl realtor_scraper -a scrape_all=False -a listing_type=sold_listings
 
 class RealtorScraperSpider(scrapy.Spider):
     name = "realtor_scraper"
@@ -23,6 +24,7 @@ class RealtorScraperSpider(scrapy.Spider):
     allowed_domains = ["www.realtor.com"]
     WEBSITE ="https://www.realtor.com"
     Primary_API = WEBSITE + "/api/v1/rdc_search_srp?client_id=rdc-search-for-sale-search&schema=vesta"
+    
     RESULTS_PER_PAGE = 42
     page_requests_sent = 0
     page_requests_received = 0
@@ -44,7 +46,7 @@ class RealtorScraperSpider(scrapy.Spider):
 
     
     # TODO convert the __init__ arguments to Literal
-    def __init__(self, crawler, scrape_all, *args, **kwargs):
+    def __init__(self, crawler, scrape_all, listing_type, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         self.crawler = crawler
@@ -52,15 +54,22 @@ class RealtorScraperSpider(scrapy.Spider):
         self.crawler.request_batch_delay = time()
         self.batch_size = self.settings.get('CONCURRENT_REQUESTS', 100)
         self.input_file = self.settings.get('INPUT_FILE', "realtor inputs.txt")
+        self.listing_type = listing_type
         self.scrape_all = True if scrape_all.lower() == "y" else False
         
         self.today = date.today()
         self.yesterday = self.today - timedelta(days = 1)
+        self.two_weeks = self.today - timedelta(days = 15)
+        self.search_time_span = {    
+            "sold_listings":self.today,
+            "new_listings":self.yesterday,
+            "all_for_sale":self.two_weeks
+            }
 
 
     @classmethod
-    def from_crawler(cls, crawler, scrape_all, *args, **kwargs):
-        spider = cls(crawler, scrape_all, *args, **kwargs) 
+    def from_crawler(cls, crawler, scrape_all, listing_type, *args, **kwargs):
+        spider = cls(crawler, scrape_all, listing_type, *args, **kwargs) 
         crawler.signals.connect(spider.get_next_state, signal=signals.spider_idle)  
         return spider
            
@@ -84,13 +93,16 @@ class RealtorScraperSpider(scrapy.Spider):
         
     def start_requests(self):
         self.state["today"] = self.today   
-        self.state["yesterday"] = self.yesterday
+        self.state["yesterday"] = self.yesterday   
+        self.state["two_weeks"] = self.two_weeks   
+        self.state["search_time_span"] = self.search_time_span
+        self.state["listing_type"] = self.listing_type
         yield self.gen_requests()
     
     def gen_requests(self):
         self.get_initial_variables()
         print(f'{'='*50}')
-        print(f"\nscraping new listings for sale in {self.state["state_name"]} state.")
+        print(f"\nscraping {self.state["listing_type"]} in {self.state["state_name"]} state.")
         self.page_requests_sent +=1
         headers, payload = self.__configure_primary_requests(1)
         return scrapy.Request(url=self.Primary_API, headers=headers, body=payload, method="POST", callback=self.run_primary_requests)
@@ -110,7 +122,7 @@ class RealtorScraperSpider(scrapy.Spider):
         
         yield from self.run_secondary_requests(response)
         
-        print(f"\n\nprimary_stage found {self.state["results_available"]} new for sale properties in {self.state["pages_available"]} pages. ") 
+        print(f"\n\nprimary_stage found {self.state["results_available"]} {self.state["listing_type"]} properties in {self.state["pages_available"]} pages. ") 
         self.crawler.total_requests_count = (self.state["pages_available"] + self.state["results_available"]) - self.page_requests_sent
         print(f"total requests to make: {self.crawler.total_requests_count}")
         
@@ -129,7 +141,7 @@ class RealtorScraperSpider(scrapy.Spider):
            
 
     def parse(self,response):
-        listing_data_item = RealtorItemLoader(Listings_Object_For_Sale(), selector= response)
+        listing_data_item = RealtorItemLoader(Listing_Item(), selector= response)
         listing_data_item.add_jmes("state","data.home.location.address.state")
         listing_data_item.add_jmes("price","data.home.list_price")
         listing_data_item.add_jmes("URL","data.home.href")
@@ -171,9 +183,9 @@ class RealtorScraperSpider(scrapy.Spider):
     def __configure_primary_requests(self, page_number):
         headers = {}
         primary_request_data = PRIMARY_REQUEST_DATA.copy() 
-        payload =primary_request_data["payload"].replace("**",self.state["state_name"]).replace("--", self.state_code)\
-            .replace("==", str(self.state["yesterday"])).replace("++",str((page_number-1)*self.RESULTS_PER_PAGE))
-        headers["referer"] = primary_request_data["referer"].replace("....", self.state["state_name"]).replace("*",str(page_number))
+        payload =primary_request_data[self.state["listing_type"]]["payload"].replace("**",self.state["state_name"]).replace("--", self.state_code)\
+            .replace("==", str(self.state["search_time_span"][self.state["listing_type"]] )).replace("++",str((page_number-1)*self.RESULTS_PER_PAGE))
+        headers["referer"] = primary_request_data[self.state["listing_type"]]["referer"].replace("....", self.state["state_name"]).replace("*",str(page_number))
         return headers, payload
     
     
@@ -193,15 +205,15 @@ class RealtorScraperSpider(scrapy.Spider):
             contents = f.read()
         if contents:
             states_names_and_codes = dict(zip(STATES, STATES_CODES))
-            self.state["state_name"] = contents.split("\n")[0].strip().replace(" ","-").lower()
-            self.state_code = states_names_and_codes[self.state["state_name"]]
+            self.state["state_name"] = self.state["state_name"] = contents.split("\n")[0].strip().replace(" ","-").lower()
+            self.state_code = states_names_and_codes[self.state["state_name"].lower()]
         else:
             raise ValueError('the input file "realtor inputs.txt" is empty!')    
         
     
     def __delete_the_scraped_state(self):
         with open(self.input_file,"r") as f:
-            all_states = [state_name.strip().replace(" ","-").lower() for state_name in f.read().strip().split("\n")]
+            all_states = [state_name.strip().lower().replace(" ","-") for state_name in f.read().strip().split("\n")]
         if all_states[0].strip() == self.state["state_name"].strip():
             all_states.remove(self.state["state_name"])
             self.__write_states_to_the_input_file(all_states)

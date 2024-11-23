@@ -6,24 +6,12 @@
 import scrapy
 from itemloaders.processors import TakeFirst, MapCompose, Join, Identity
 from scrapy.loader import ItemLoader
-from w3lib.html import remove_tags
-
-from dataclasses import dataclass, field
-from typing import Optional
-
-
 
 
 class RealtorItemLoader(ItemLoader):
     default_output_processor = TakeFirst()
  
-
-class Listings_Request(scrapy.Item):
-    permalink = scrapy.Field()
-    property_id = scrapy.Field()
-    listing_id = scrapy.Field()
-
-class Listings_Object_For_Sale(scrapy.Item):
+class Listing_Item(scrapy.Item):
     state = scrapy.Field()
     price = scrapy.Field()
     URL = scrapy.Field()
@@ -45,10 +33,8 @@ class Listings_Object_For_Sale(scrapy.Item):
     office_email = scrapy.Field()
     sold_date = scrapy.Field()
     status = scrapy.Field()
-    days_on_realtor = scrapy.Field()
+    days_on_realtor = scrapy.Field()###################
     
-    
-
     
 
    
