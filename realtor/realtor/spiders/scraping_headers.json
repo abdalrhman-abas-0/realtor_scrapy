@@ -1,0 +1,18 @@
+{
+    "accept": "application/json, text/javascript",
+    "accept-encoding": "gzip, deflate, br",
+    "accept-language": "en-US,en;q=0.5",
+    "connection": "keep-alive",
+    "content-type": "application/json",
+    "host": "www.realtor.com",
+    "newrelic": "eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM3ODU4NCIsImFwIjoiMTM4NjEyODM5MCIsImlkIjoiNzVhMmVmMDMyMTUxNTg1MSIsInRyIjoiNDdlODI1Y2I4Y2U3ODlmMjU3NWZmNzY3YmM2N2I5YWYiLCJ0aSI6MTcyNDY0NDU4NDY3NCwidGsiOiIxMDIyNjgxIn19",
+    "origin": "https://www.realtor.com",
+    "rdc-ab-test-client": "rdc-search-for-sale",
+    "referer": "https://www.realtor.com/realestateandhomes-search/California/show-recently-sold",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "traceparent": "00-47e825cb8ce789f2575ff767bc67b9af-75a2ef0321515851-01",
+    "tracestate": "1022681@nr=0-1-378584-1386128390-75a2ef0321515851----1724644584674",
+    "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0.1 Safari/605.1.15"
+}

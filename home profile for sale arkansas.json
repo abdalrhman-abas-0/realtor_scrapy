@@ -1,0 +1,916 @@
+{
+    "url": "https://www.realtor.com/frontdoor/graphql?operationName=FullPropertyDetails&variables=%7B%22propertyId%22%3A%227167548998%22%2C%22listingId%22%3A%222975275214%22%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%22830b3b7dc4f8f3ba14c233aa852456fd2b62777a54faf35a8c2fd29e8fb8de92%22%7D%7D",
+    "headers": {
+        "accept": "*/*",
+        "accept-language": "en",
+        "content-type": "application/json",
+        "priority": "u=1, i",
+        "rdc-client-name": "RDC_WEB_DETAILS_PAGE",
+        "rdc-client-version": "2.1.137",
+        "sec-ch-ua": "\"(Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"130\", \"Chromium\";v=\"130\"",
+        "sec-ch-ua-full-version-list": "\"(Not(A:Brand\";v=\"99.0.0.0\", \"Google Chrome\";v=\"130\", \"Chromium\";v=\"130\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\"",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "x-is-bot": "false",
+        "cookie": "split=n; split_tcv=165; __vst=dc0519b7-adc4-4ad1-9ecb-7f64528e1771; __ssn=cdd93ab6-db06-44f6-8ff6-32dd6840cd3a; __ssnstarttime=1732232746; __bot=false; isAuth0GnavEnabled=C; pxcts=bb795ede-a862-11ef-9316-97b407201f8c; _pxvid=bb78b1f3-a862-11ef-930d-ccefa6292950; ab.storage.userId.7cc9d032-9d6d-44cf-a8f5-d276489af322=g%3Avisitor_dc0519b7-adc4-4ad1-9ecb-7f64528e1771%7Ce%3Aundefined%7Cc%3A1732232748038%7Cl%3A1732232748043; ab.storage.deviceId.7cc9d032-9d6d-44cf-a8f5-d276489af322=g%3A0ae15c68-c626-fca6-769d-0174d13c7cc3%7Ce%3Aundefined%7Cc%3A1732232748045%7Cl%3A1732232748045; _pbjs_userid_consent_data=3524755945110770; _lr_retry_request=true; _lr_env_src_ats=false; permutive-id=cfc2b4fc-a53c-4643-bd45-093ffdb7bc93; AMCVS_8853394255142B6A0A4C98A4%40AdobeOrg=1; s_ecid=MCMID%7C24427859155468109904483770406962881121; AMCV_8853394255142B6A0A4C98A4%40AdobeOrg=-1124106680%7CMCIDTS%7C20049%7CMCMID%7C24427859155468109904483770406962881121%7CMCAAMLH-1732837548%7C6%7CMCAAMB-1732837548%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1732239950s%7CNONE%7CMCAID%7CNONE%7CMCSYNCSOP%7C411-20056%7CvVersion%7C5.2.0; G_ENABLED_IDPS=google; _fbp=fb.1.1732232750714.18862539893047707; _ncg_sp_ses.cc72=*; _ncg_id_=2f2f1d29-2c80-4814-92c5-caa3715b7eb5; __split=59; AMCVS_AMCV_8853394255142B6A0A4C98A4%40AdobeOrg=1; AMCV_AMCV_8853394255142B6A0A4C98A4%40AdobeOrg=-1124106680%7CMCMID%7C24427859155468109904483770406962881121%7CMCIDTS%7C20049%7CMCOPTOUT-1732239951s%7CNONE%7CvVersion%7C5.2.0; adcloud={%22_les_v%22:%22c%2Cy%2Crealtor.com%2C1732234551%22}; _ncg_domain_id_=2f2f1d29-2c80-4814-92c5-caa3715b7eb5.1.1732232751079.1795304751079; ajs_anonymous_id=65842b41-eb3f-4f30-bfad-e1b762786b4e; _ncg_g_id_=823e450f-ce4d-4f32-94dc-6d4472fb9693.1.1732232751.1795304751079; __gads=ID=ad28fba1ff3f5583:T=1732232751:RT=1732232751:S=ALNI_MYh1PhAMy8xx0guPvcpmhYwJR0jpg; __gpi=UID=00000f551a2a1f54:T=1732232751:RT=1732232751:S=ALNI_MbiT1SFs5jLVVj_4bSQWqFT3p-TwA; __eoi=ID=de9cad7d06d011e9:T=1732232751:RT=1732232751:S=AA-AfjYuxF4NTwJxeyejBsI1YHGy; __qca=P0-1598000904-1732232752111; _gcl_au=1.1.959351455.1732232754; _ga=GA1.1.1313106549.1732232755; panoramaId_expiry=1732319156351; _cc_id=9d28bc1feade1216d3ca7e26fdadee40; _lr_sampling_rate=100; kampyle_userid=eaa0-51c7-e2f0-a904-4e28-9ec4-fdd7-7688; kampyleUserSession=1732232757559; kampyleUserSessionsCount=1; srchID=b90362236ce84e43bf3cc9c7e96305db; _ncg_sp_id.cc72=2f2f1d29-2c80-4814-92c5-caa3715b7eb5.1732232751.1.1732232768.1732232751.ac0ab8b0-4a61-4afe-ad78-00f9f7e15df9; __gsas=ID=3c430444947d3c29:T=1732232768:RT=1732232768:S=ALNI_Mb2Ej6i2en8auu5byJ4k04OFFF9OA; kampyleUserPercentile=72.19388557054094; cto_bundle=ntiCH180enhlNFVVRVU3QzF3bkVHbmlmTXpSTEtZVVZWV1dEVHBzMW5OemViJTJGenJ1N3Jjd01RdmpBSG50Q0c0VU5CSm1iQWM1RFk4cDZqRWhMcyUyRm9FelhINGNRSEN6JTJGalZ6V2FFWWxZRGpqTGNGUFoxTlBxJTJGSmVkVUZMQjAwUSUyQmFvS1A; _uetsid=bf2dfeb0a86211ef8c6cc77ca86c7357|877ebg|2|fr2|0|1786; _uetvid=bf2e0670a86211ef866b95a416edcc16|lg1kg2|1732232774092|2|1|bat.bing.com/p/insights/c/o; _parsely_session={%22sid%22:1%2C%22surl%22:%22https://www.realtor.com/realestateandhomes-search/Arkansas%22%2C%22sref%22:%22https://www.realtor.com/%22%2C%22sts%22:1732232788865%2C%22slts%22:0}; _parsely_visitor={%22id%22:%22pid=68dad164-c203-40cf-9b50-5f854e6d618e%22%2C%22session_count%22:1%2C%22last_session_ts%22:1732232788865}; cto_bundle=HZh9EF80enhlNFVVRVU3QzF3bkVHbmlmTXpkJTJCSTlNcTRtRHNuekdBQUdzbDUlMkIlMkZxdHZkWXBWN0c4QVklMkZTSmslMkJSVEU3clJVZDEzcWFyc1RQMmxTdVZERnNnazFOaXM1bzlUTjhuSmhsalZQVFd6V3dmT0p6R2R3T1dyc2psajZIVGRnNGQ; cto_bundle=HZh9EF80enhlNFVVRVU3QzF3bkVHbmlmTXpkJTJCSTlNcTRtRHNuekdBQUdzbDUlMkIlMkZxdHZkWXBWN0c4QVklMkZTSmslMkJSVEU3clJVZDEzcWFyc1RQMmxTdVZERnNnazFOaXM1bzlUTjhuSmhsalZQVFd6V3dmT0p6R2R3T1dyc2psajZIVGRnNGQ; cto_bidid=2pwDeV9FWEhkR1p0JTJGaE92TlV0RUNOcU1rOWV0MkRmbkV0UDNGSTkzUXlqOWRKNEwycVJEdlEyNm5hUFoyOHhzUlVONFFTN3FZSHk1UmJVSlh5WXpiZ3hpJTJGJTJCZyUzRCUzRA; criteria=sprefix%3D%252Fnewhomecommunities%26area_type%3Dstate%26pg%3D2%26state_code%3DAR%26state%3DArkansas%26state_id%3DAR%26loc%3DArkansas%26locSlug%3DArkansas; ab.storage.sessionId.7cc9d032-9d6d-44cf-a8f5-d276489af322=g%3Aa093bc81-02e4-8abc-a103-d6069f8b7078%7Ce%3A1732234598417%7Cc%3A1732232748040%7Cl%3A1732232798417; _px3=af6d16fbd2cef567c478a5b65ebe965cb4d32af50fffbbf16bdd9750aa1bcaac:+yLp0irpGi58oqfWJVjuejUqx97xC2u+1Km66q9HvEPkwvQSBUbouL6Qz4g2+wdlzd57jHNiH5INnz2jRySjuw==:1000:k4mYwcXcn0S7RecLfvp2rpeF4GkYz/GAZmfYF53bAfZYdqjJadQwOYYFM28QAUM47sGuagPc6QkQxp+fi0XBSBtVo/cuZKg0nwgfpMax5Ime4bPiQrIVEeQwK0WEEcnWL5WSTrXU46JAsXlB1tMH7En9XroDNRWTUOt+bk9yDs68iZsMfE5tdzUjKdR1HJiZbpMhum1+2N5ZHertGL5YyT2weIcOa9sz6Cn89L3rw7c=; _parsely_slot_click={%22url%22:%22https://www.realtor.com/realestateandhomes-search/Arkansas%22%2C%22x%22:16%2C%22y%22:369%2C%22xpath%22:%22//*[@id=%5C%22property_id_7167548998%5C%22]/div[2]/div[1]/div[1]/div[1]/a[1]%22%2C%22href%22:%22https://www.realtor.com/realestateandhomes-detail/101-Willow-St_Marion_AR_72364_M71675-48998?from=srp-list-card%22}; kampyleSessionPageCounter=4; _ga_MS5EHT6J6V=GS1.1.1732232754.1.1.1732233254.0.0.0",
+        "Referer": "https://www.realtor.com/realestateandhomes-detail/101-Willow-St_Marion_AR_72364_M71675-48998?from=srp-list-card",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+    },
+    "body": null,
+    "method": "GET",
+    "response": {
+        "data": {
+            "home": {
+                "mortgage": {
+                    "property_tax_rate": 0.00367485,
+                    "average_rates": [
+                        {
+                            "rate": 0.06927,
+                            "loan_type": {
+                                "loan_id": "thirty_year_fix",
+                                "is_va_loan": null,
+                                "display_name": "30-year fixed",
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06787,
+                            "loan_type": {
+                                "loan_id": "twenty_year_fix",
+                                "is_va_loan": null,
+                                "display_name": "20-year fixed",
+                                "term": 20,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06022,
+                            "loan_type": {
+                                "loan_id": "fifteen_year_fix",
+                                "is_va_loan": null,
+                                "display_name": "15-year fixed",
+                                "term": 15,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.05925,
+                            "loan_type": {
+                                "loan_id": "ten_year_fix",
+                                "is_va_loan": null,
+                                "display_name": "10-year fixed",
+                                "term": 10,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06225,
+                            "loan_type": {
+                                "loan_id": "thirty_year_fha",
+                                "is_va_loan": null,
+                                "display_name": "30-year fixed FHA",
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06297,
+                            "loan_type": {
+                                "loan_id": "thirty_year_va",
+                                "is_va_loan": true,
+                                "display_name": "30-year fixed VA",
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06683,
+                            "loan_type": {
+                                "loan_id": "five_one_arm",
+                                "is_va_loan": null,
+                                "display_name": "5-year ARM",
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        {
+                            "rate": 0.06888,
+                            "loan_type": {
+                                "loan_id": "seven_one_arm",
+                                "is_va_loan": null,
+                                "display_name": "7-year ARM",
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        }
+                    ],
+                    "closing_cost": 4580,
+                    "closing_cost_rate": "4%",
+                    "due_at_close": 27480,
+                    "insurance_rate": 0.0052,
+                    "county_fha_loan_limit": 498257,
+                    "is_listing_price_eligible_for_fha": true,
+                    "estimate": {
+                        "monthly_payment": 690,
+                        "monthly_payment_details": [
+                            {
+                                "amount": 605,
+                                "display_name": "Principal & Interest",
+                                "type": "principal_and_interest",
+                                "__typename": "MonthlyOwnershipExpense"
+                            },
+                            {
+                                "amount": 50,
+                                "display_name": "Home Insurance",
+                                "type": "home_insurance",
+                                "__typename": "MonthlyOwnershipExpense"
+                            },
+                            {
+                                "amount": 0,
+                                "display_name": "HOA Fees",
+                                "type": "hoa_fees",
+                                "__typename": "MonthlyOwnershipExpense"
+                            },
+                            {
+                                "amount": 0,
+                                "display_name": "Mortgage Insurance",
+                                "type": "mortgage_insurance",
+                                "__typename": "MonthlyOwnershipExpense"
+                            },
+                            {
+                                "amount": 35,
+                                "display_name": "Property Tax",
+                                "type": "property_tax",
+                                "__typename": "MonthlyOwnershipExpense"
+                            }
+                        ],
+                        "average_rate": {
+                            "rate": 0.06927,
+                            "loan_type": {
+                                "term": 30,
+                                "__typename": "LoanType"
+                            },
+                            "__typename": "Rate"
+                        },
+                        "__typename": "MortgageEstimate"
+                    },
+                    "__typename": "Mortgage"
+                },
+                "advertisers": [
+                    {
+                        "team": null,
+                        "state_license": "",
+                        "address": {
+                            "city": "BOYNTON BEACH",
+                            "country": "USA",
+                            "line": "8908 Briarwood Meadow Lane",
+                            "postal_code": "33473",
+                            "state": null,
+                            "state_code": "FL",
+                            "__typename": "AdvertiserAddress"
+                        },
+                        "builder": null,
+                        "broker": {
+                            "accent_color": "",
+                            "designations": [],
+                            "fulfillment_id": "0",
+                            "name": "",
+                            "logo": "",
+                            "__typename": "HomeAdvertiserBroker"
+                        },
+                        "email": "ralph@listwithfreedom.com",
+                        "fulfillment_id": "4136147",
+                        "href": null,
+                        "mls_set": "A-LRAR-21954",
+                        "name": "Ralph Harvey",
+                        "nrds_id": null,
+                        "office": {
+                            "address": {
+                                "city": null,
+                                "coordinate": {
+                                    "lat": null,
+                                    "lon": null,
+                                    "__typename": "SimpleCoordinate"
+                                },
+                                "country": null,
+                                "line": null,
+                                "postal_code": null,
+                                "state": null,
+                                "state_code": null,
+                                "__typename": "AdvertiserAddress"
+                            },
+                            "application_url": null,
+                            "email": "jimtym@yahoo.com",
+                            "lead_email": null,
+                            "fulfillment_id": "2948845",
+                            "hours": null,
+                            "href": "",
+                            "mls_set": "O-LRAR-1945",
+                            "out_of_community": null,
+                            "name": "Listwithfreedom.Com, Inc.",
+                            "phones": [
+                                {
+                                    "ext": "",
+                                    "number": "8554564945",
+                                    "primary": true,
+                                    "trackable": null,
+                                    "type": "Mobile",
+                                    "__typename": "AdvertiserPhone"
+                                }
+                            ],
+                            "photo": {
+                                "href": "https://ap.rdcpix.com/1644463899/c5a1a48f66c1c52930e540dd9752ebfdo-c0l.jpg",
+                                "__typename": "Href"
+                            },
+                            "slogan": "",
+                            "__typename": "HomeAdvertiserOffice"
+                        },
+                        "phones": [
+                            {
+                                "ext": "",
+                                "number": "8554564945",
+                                "primary": true,
+                                "trackable": null,
+                                "type": "BUSINESS_PHONE",
+                                "__typename": "AdvertiserPhone"
+                            }
+                        ],
+                        "photo": null,
+                        "slogan": null,
+                        "type": "seller",
+                        "__typename": "HomeAdvertiser"
+                    }
+                ],
+                "builder": null,
+                "products": {
+                    "products": [
+                        "core.agent",
+                        "core.broker",
+                        "co_broke"
+                    ],
+                    "brand_name": "essentials",
+                    "__typename": "ProductSummary"
+                },
+                "promotions": null,
+                "consumer_advertisers": [
+                    {
+                        "advertiser_id": "2948845",
+                        "agent_id": "4136147",
+                        "broker_id": null,
+                        "office_id": "2948845",
+                        "name": "Ralph Harvey",
+                        "type": "Agent",
+                        "slogan": null,
+                        "phone": null,
+                        "href": "/realestateagents/Ralph-Harvey_Marion_AR_4136147",
+                        "show_realtor_logo": false,
+                        "hours": null,
+                        "contact_name": null,
+                        "address": null,
+                        "photo": {
+                            "description": null,
+                            "href": null,
+                            "type": null,
+                            "__typename": "Photo"
+                        },
+                        "__typename": "ConsumerAdvertiser"
+                    },
+                    {
+                        "advertiser_id": "2948845",
+                        "agent_id": "4136147",
+                        "broker_id": null,
+                        "office_id": "2948845",
+                        "name": "Listwithfreedom.Com, Inc.",
+                        "type": "Office",
+                        "slogan": null,
+                        "phone": "(855) 456-4945",
+                        "href": "",
+                        "show_realtor_logo": false,
+                        "hours": null,
+                        "contact_name": null,
+                        "address": {
+                            "city": null,
+                            "state_code": null,
+                            "__typename": "AdvertiserAddress"
+                        },
+                        "photo": {
+                            "description": null,
+                            "href": "https://ap.rdcpix.com/1644463899/c5a1a48f66c1c52930e540dd9752ebfdo-c0s.jpg",
+                            "type": null,
+                            "__typename": "Photo"
+                        },
+                        "__typename": "ConsumerAdvertiser"
+                    }
+                ],
+                "buyers": null,
+                "community": null,
+                "days_on_market": null,
+                "move_in_date": null,
+                "description": {
+                    "baths": 2,
+                    "baths_3qtr": null,
+                    "baths_full": 2,
+                    "baths_half": null,
+                    "baths_max": null,
+                    "baths_min": null,
+                    "baths_total": null,
+                    "baths_consolidated": "2",
+                    "beds": 3,
+                    "beds_max": null,
+                    "beds_min": null,
+                    "construction": null,
+                    "cooling": null,
+                    "exterior": null,
+                    "fireplace": null,
+                    "garage": null,
+                    "garage_max": null,
+                    "garage_min": null,
+                    "garage_type": null,
+                    "heating": null,
+                    "logo": null,
+                    "lot_sqft": 4356,
+                    "name": null,
+                    "pool": null,
+                    "roofing": null,
+                    "rooms": null,
+                    "sqft": 994,
+                    "sqft_max": null,
+                    "sqft_min": null,
+                    "stories": 2,
+                    "styles": [
+                        "colonial_revival"
+                    ],
+                    "sub_type": null,
+                    "text": "Freshly rehabbed home new floors and carpet in the loft. Check this one out!",
+                    "type": "single_family",
+                    "units": null,
+                    "year_built": 1984,
+                    "year_renovated": null,
+                    "zoning": null,
+                    "__typename": "HomeDescription"
+                },
+                "details": [
+                    {
+                        "category": "Bedrooms",
+                        "parent_category": "Interior",
+                        "text": [
+                            "Bedrooms: 3",
+                            "Primary Bedroom Dimensions: 10 x 10"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Bathrooms",
+                        "parent_category": "Interior",
+                        "text": [
+                            "Total Bathrooms: 2 / 0",
+                            "Full Bathrooms: 2"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Heating and Cooling",
+                        "parent_category": "Interior",
+                        "text": [
+                            "No Heating"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Interior Features",
+                        "parent_category": "Interior",
+                        "text": [
+                            "Flooring: Wood, Laminate"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Kitchen and Dining",
+                        "parent_category": "Interior",
+                        "text": [
+                            "Kitchen Dimensions: 8 x 8"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Other Rooms",
+                        "parent_category": "Interior",
+                        "text": [
+                            "Living Room Dimensions: 10 x 10"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Land Info",
+                        "parent_category": "Exterior",
+                        "text": [
+                            "Lot Description: Level, In Subdivision",
+                            "Lot Size Acres: 0.1",
+                            "Lot Size Square Feet: 4356"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Exterior and Lot Features",
+                        "parent_category": "Exterior",
+                        "text": [
+                            "Roads: Paved"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Homeowners Association",
+                        "parent_category": "Community",
+                        "text": [
+                            "Association: No",
+                            "Calculated Total Monthly Association Fees: 0"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Other Property Info",
+                        "parent_category": "Listing",
+                        "text": [
+                            "Annual Tax Amount: 420.77",
+                            "Source Listing Status: Active",
+                            "County: Crittenden",
+                            "Directions: Turn right onto AR-77 N, Turn right onto Medel Marconi Rd, Turn left onto Willow Dr, Destination will be on the left",
+                            "Tax Year: 2023",
+                            "Source Property Type: Residential",
+                            "Area: CRITTENDEN COUNTY",
+                            "Source Neighborhood: FORREST PARK ADD",
+                            "Subdivision: FORREST PARK ADD",
+                            "Property Features: 2 Bedrooms Same Level",
+                            "Property Subtype: Detached",
+                            "Source System Name: C2C"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Building and Construction",
+                        "parent_category": "Features",
+                        "text": [
+                            "Total Square Feet Living: 994",
+                            "Year Built: 1984",
+                            "Building Exterior Type: Metal/Vinyl Siding",
+                            "Foundation Details: Slab",
+                            "Property Age: 40",
+                            "Roof: Architectural Shingle",
+                            "Levels or Stories: Two Story",
+                            "House Style: Traditional"
+                        ],
+                        "__typename": "HomeDetails"
+                    },
+                    {
+                        "category": "Utilities",
+                        "parent_category": "Features",
+                        "text": [
+                            "Sewer-Public",
+                            "Water-Public",
+                            "Elec-Municipal (+Entergy)",
+                            "Water Source: Water-Public"
+                        ],
+                        "__typename": "HomeDetails"
+                    }
+                ],
+                "other_listings": {
+                    "rdc": [
+                        {
+                            "listing_id": "2975275214",
+                            "status": "for_sale",
+                            "listing_key": null,
+                            "sold_date": null,
+                            "primary": true,
+                            "unique": true,
+                            "__typename": "HomeOtherListing"
+                        },
+                        {
+                            "listing_id": "2938287160",
+                            "status": "off_market",
+                            "listing_key": null,
+                            "sold_date": null,
+                            "primary": null,
+                            "unique": null,
+                            "__typename": "HomeOtherListing"
+                        },
+                        {
+                            "listing_id": "2912882415",
+                            "status": "off_market",
+                            "listing_key": null,
+                            "sold_date": null,
+                            "primary": null,
+                            "unique": null,
+                            "__typename": "HomeOtherListing"
+                        }
+                    ],
+                    "__typename": "HomeOtherListings"
+                },
+                "lead_attributes": {
+                    "show_contact_an_agent": true,
+                    "lead_type": "co_broke",
+                    "market_type": "pure",
+                    "show_lead_form": true,
+                    "disclaimer_text": null,
+                    "is_tcpa_message_enabled": null,
+                    "show_text_leads": true,
+                    "opcity_lead_attributes": {
+                        "flip_the_market_enabled": true,
+                        "phones": [
+                            {
+                                "number": "(870)686-3912",
+                                "category": "comm_console",
+                                "__typename": "OpCityLocalPhone"
+                            },
+                            {
+                                "number": "(870)686-3912",
+                                "category": "schedule_tour",
+                                "__typename": "OpCityLocalPhone"
+                            }
+                        ],
+                        "__typename": "OpCityLeadAttributes"
+                    },
+                    "ready_connect_mortgage": {
+                        "show_contact_a_lender": false,
+                        "show_veterans_united": false,
+                        "__typename": "ReadyConnectMortgage"
+                    },
+                    "__typename": "LeadAttributes"
+                },
+                "flags": {
+                    "is_coming_soon": null,
+                    "is_contingent": null,
+                    "is_foreclosure": null,
+                    "is_new_construction": null,
+                    "is_pending": null,
+                    "is_subdivision": null,
+                    "is_price_reduced": null,
+                    "is_new_listing": true,
+                    "is_short_sale": null,
+                    "is_price_excludes_land": null,
+                    "__typename": "HomeFlags"
+                },
+                "href": "https://www.realtor.com/realestateandhomes-detail/101-Willow-St_Marion_AR_72364_M71675-48998",
+                "last_sold_date": "2022-05-23",
+                "last_sold_price": 498000,
+                "list_date": "2024-11-21T21:23:03Z",
+                "list_price": 114500,
+                "last_price_change_amount": null,
+                "listing_id": "2975275214",
+                "location": {
+                    "street_view_url": "https://maps.googleapis.com/maps/api/streetview?channel=rdc-streetview&client=gme-movesalesinc&location=101%20Willow%20St%2C%20Marion%2C%20AR%2072364&size=932x420&source=outdoor&signature=SiLrGJ_b3i-jYgn6GTaagpp-lfE=",
+                    "street_view_metadata_url": "https://maps.googleapis.com/maps/api/streetview/metadata?channel=rdc-streetview&client=gme-movesalesinc&location=101%20Willow%20St%2C%20Marion%2C%20AR%2072364&size=640x480&source=outdoor&signature=E0TgQsm4PLPX2Qff2QMxMNSZc1I=",
+                    "address": {
+                        "city": "Marion",
+                        "coordinate": {
+                            "lat": 35.210732,
+                            "lon": -90.191759,
+                            "__typename": "HomeCoordinate"
+                        },
+                        "country": "USA",
+                        "line": "101 Willow St",
+                        "postal_code": "72364",
+                        "state": "Arkansas",
+                        "state_code": "AR",
+                        "street_direction": null,
+                        "street_name": "Willow",
+                        "street_number": "101",
+                        "street_post_direction": null,
+                        "street_suffix": "St",
+                        "unit": null,
+                        "validation_code": "121",
+                        "__typename": "HomeAddress"
+                    },
+                    "county": {
+                        "fips_code": "05035",
+                        "name": "Crittenden",
+                        "state_code": "AR",
+                        "__typename": "HomeCounty"
+                    },
+                    "neighborhoods": null,
+                    "search_areas": [
+                        {
+                            "city": "marion",
+                            "state_code": "ar",
+                            "__typename": "SearchArea"
+                        }
+                    ],
+                    "city": {
+                        "county_needed_for_uniq": false,
+                        "slug_id": "Marion_AR",
+                        "__typename": "City"
+                    },
+                    "postal_code": {
+                        "geo_statistics": {
+                            "housing_market": {
+                                "hot_market_badge": "Other",
+                                "__typename": "HousingMarket"
+                            },
+                            "__typename": "GeoStatistics"
+                        },
+                        "__typename": "PostalCode"
+                    },
+                    "__typename": "HomeLocation"
+                },
+                "open_houses": null,
+                "permalink": "101-Willow-St_Marion_AR_72364_M71675-48998",
+                "photo_count": 6,
+                "photos": [
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m2497110114s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "house_view",
+                                "__typename": "Tag"
+                            },
+                            {
+                                "label": "porch",
+                                "__typename": "Tag"
+                            },
+                            {
+                                "label": "complete",
+                                "__typename": "Tag"
+                            },
+                            {
+                                "label": "front",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    },
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m3080586756s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "kitchen",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    },
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m621359632s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "bathroom",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    },
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m1889615119s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "closet",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    },
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m291765s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "closet",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    },
+                    {
+                        "title": null,
+                        "description": null,
+                        "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m826090232s.jpg",
+                        "type": "realtordotcom_mls_listing_image",
+                        "tags": [
+                            {
+                                "label": "closet",
+                                "__typename": "Tag"
+                            }
+                        ],
+                        "__typename": "HomePhoto"
+                    }
+                ],
+                "price_per_sqft": 115,
+                "primary_photo": {
+                    "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m2497110114s.jpg",
+                    "__typename": "HomePhoto"
+                },
+                "hoa": {
+                    "fee": 0,
+                    "__typename": "HomeHOA"
+                },
+                "property_id": "7167548998",
+                "provider_url": null,
+                "source": {
+                    "days_on_mls": null,
+                    "agents": [
+                        {
+                            "agent_id": "21954",
+                            "agent_name": "Ralph Harvey",
+                            "agent_email": null,
+                            "agent_phone": null,
+                            "id": "LRAR",
+                            "office_id": "1945",
+                            "office_name": null,
+                            "office_phone": null,
+                            "type": "seller",
+                            "__typename": "MlsAgent"
+                        }
+                    ],
+                    "disclaimer": {
+                        "href": null,
+                        "logo": null,
+                        "text": "©2024  Cooperative Arkansas REALTORS® MLS, Inc. All rights reserved.",
+                        "__typename": "MlsDisclaimer"
+                    },
+                    "copyrightnotice": null,
+                    "id": "LRAR",
+                    "plan_id": null,
+                    "listing_id": "24042320",
+                    "name": "Carmls",
+                    "raw": {
+                        "status": "Active",
+                        "style": "Traditional",
+                        "tax_amount": 420.77,
+                        "__typename": "MlsRawData"
+                    },
+                    "type": "mls",
+                    "community_id": null,
+                    "__typename": "MlsSource"
+                },
+                "status": "for_sale",
+                "suppression_flags": {
+                    "has_suppress_foreclosure": true
+                },
+                "tags": [
+                    "hardwood_floors",
+                    "two_or_more_stories"
+                ],
+                "__typename": "Home"
+            },
+            "get_augmented_gallery": {
+                "photo_categories": [
+                    {
+                        "key": "all_photos",
+                        "category": "All Photos",
+                        "detailedText": null,
+                        "photoCount": 6,
+                        "photos": [
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m2497110114s.jpg",
+                                "tag": "house_view",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m3080586756s.jpg",
+                                "tag": "kitchen",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m621359632s.jpg",
+                                "tag": "bathroom",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m1889615119s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m291765s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m826090232s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            }
+                        ],
+                        "__typename": "PhotoCategories"
+                    },
+                    {
+                        "key": "bathroom",
+                        "category": "Bathroom",
+                        "detailedText": [
+                            {
+                                "subCategory": "Bathrooms",
+                                "text": [
+                                    "Total Bathrooms: 2 / 0",
+                                    "Full Bathrooms: 2"
+                                ],
+                                "__typename": "DetailedText"
+                            }
+                        ],
+                        "photoCount": 1,
+                        "photos": [
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m621359632s.jpg",
+                                "tag": "bathroom",
+                                "__typename": "PhotoTag"
+                            }
+                        ],
+                        "__typename": "PhotoCategories"
+                    },
+                    {
+                        "key": "exterior",
+                        "category": "Exterior",
+                        "detailedText": [
+                            {
+                                "subCategory": "Exterior and Lot Features",
+                                "text": [
+                                    "Roads: Paved"
+                                ],
+                                "__typename": "DetailedText"
+                            }
+                        ],
+                        "photoCount": 1,
+                        "photos": [
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m2497110114s.jpg",
+                                "tag": "house_view",
+                                "__typename": "PhotoTag"
+                            }
+                        ],
+                        "__typename": "PhotoCategories"
+                    },
+                    {
+                        "key": "kitchen",
+                        "category": "Kitchen",
+                        "detailedText": [
+                            {
+                                "subCategory": "Kitchen and Dining",
+                                "text": [
+                                    "Kitchen Dimensions: 8 x 8"
+                                ],
+                                "__typename": "DetailedText"
+                            }
+                        ],
+                        "photoCount": 1,
+                        "photos": [
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m3080586756s.jpg",
+                                "tag": "kitchen",
+                                "__typename": "PhotoTag"
+                            }
+                        ],
+                        "__typename": "PhotoCategories"
+                    },
+                    {
+                        "key": "more",
+                        "category": "More",
+                        "detailedText": null,
+                        "photoCount": 3,
+                        "photos": [
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m1889615119s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m291765s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            },
+                            {
+                                "href": "https://ap.rdcpix.com/4fae67fc8b29a10a5c905ea69a31f8b0l-m826090232s.jpg",
+                                "tag": "closet",
+                                "__typename": "PhotoTag"
+                            }
+                        ],
+                        "__typename": "PhotoCategories"
+                    }
+                ],
+                "__typename": "HomePhotoCategories"
+            }
+        }
+    }
+}
