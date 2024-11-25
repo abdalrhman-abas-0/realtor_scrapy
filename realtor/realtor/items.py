@@ -1,17 +1,27 @@
-# Define here the models for your scraped items
-#
-# See documentation in:
-# https://docs.scrapy.org/en/latest/topics/items.html
+"""
+Realtor Scraper Items
+
+This module defines the models for the items scraped from Realtor.com.
+It includes the definition of the Listing_Item class which represents the data structure for each listing,
+and the RealtorItemLoader class for processing item data during the scraping process.
+"""
 
 import scrapy
 from itemloaders.processors import TakeFirst, MapCompose, Join, Identity
 from scrapy.loader import ItemLoader
 
-
 class RealtorItemLoader(ItemLoader):
+    """
+    Custom ItemLoader for processing scraped data.
+    The default output processor is set to TakeFirst, which retrieves the first non-null/non-empty value from the list of values.
+    """
     default_output_processor = TakeFirst()
- 
+
 class Listing_Item(scrapy.Item):
+    """
+    Data model for the real estate listings scraped from Realtor.com.
+    Each field represents a piece of information about a listing.
+    """
     state = scrapy.Field()
     price = scrapy.Field()
     URL = scrapy.Field()
@@ -33,8 +43,4 @@ class Listing_Item(scrapy.Item):
     office_email = scrapy.Field()
     sold_date = scrapy.Field()
     status = scrapy.Field()
-    days_on_realtor = scrapy.Field()###################
-    
-    
-
-   
+    days_on_realtor = scrapy.Field()

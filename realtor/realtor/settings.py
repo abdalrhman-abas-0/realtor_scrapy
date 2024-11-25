@@ -21,7 +21,7 @@
 # LOG_FORMAT = '%(levelname)s: %(message)s'
 # LOG_DATEFORMAT = '%Y-%m-%d %H:%M:%S'
 
-# LOG_LEVEL = 'INFO'
+
 LOG_LEVEL = 'ERROR'
 
 
@@ -34,6 +34,9 @@ SAVE_POINTS_DIR = "realtor/crawl_jobs/temporary_save_points"
 PRIMARY_OUTPUTS_DIR = "realtor/primary_outputs"
 OUTPUT_DIR = "realtor/outputs"
 
+
+JOBDIR= "realtor/crawl_jobs/realtor_spider_job"
+ 
 
 BOT_NAME = "realtor"
 
@@ -54,7 +57,7 @@ SCRAPING_HEADERS = {}
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 100
+CONCURRENT_REQUESTS = 20
 
 
 # Configure a delay for requests for the same website (default: 0)
@@ -94,9 +97,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "realtor.pipelines.RealtorPipeline": 300,
-#}
+ITEM_PIPELINES = {
+  'realtor.pipelines.Realtor_Pipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
